@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mauricio Mellado Cervantes | RAL Ventas</title>
+  <meta name="description" content="Tarjeta de presentación de Mauricio Mellado Cervantes, Departamento de Ventas de RAL.">
+  <meta name="theme-color" content="#060709">
+  <link rel="icon" href="assets/logo-ral.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060709;
+      --card: #0e0f12;
+      --red: #e3262b;
+      --red-light: #f0624a;
+      --gray-dark: #3a3b3e;
+      --gray: #6e6f72;
+      --gray-light: #a7a8ab;
+      --text: #f2f2f3;
+      --whatsapp: #25d366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(227, 38, 43, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(110, 111, 114, 0.15), transparent 45%),
+        var(--bg);
+      font-family: "Barlow", system-ui, sans-serif;
+      color: var(--text);
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      background: linear-gradient(160deg, #15161a 0%, var(--card) 55%, #08090b 100%);
+      border: 1px solid #222327;
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      animation: rise 0.7s ease-out both;
+    }
+
+    /* Franjas diagonales inspiradas en el logo */
+    .stripes {
+      position: absolute;
+      top: 0;
+      right: -40px;
+      width: 220px;
+      height: 120px;
+      pointer-events: none;
+    }
+    .stripes span {
+      position: absolute;
+      right: 0;
+      height: 26px;
+      transform: skewY(-14deg);
+    }
+    .stripes .s1 { top: 18px; width: 170px; background: linear-gradient(90deg, var(--red-light), var(--red)); }
+    .stripes .s2 { top: 52px; width: 140px; background: linear-gradient(90deg, #4a4b4f, var(--gray-dark)); }
+    .stripes .s3 { top: 86px; width: 110px; background: #25262a; }
+
+    .header {
+      position: relative;
+      padding: 36px 28px 0;
+    }
+
+    .logo {
+      width: 104px;
+      height: 104px;
+      object-fit: cover;
+      background: #060709;
+      border: 2px solid #26272b;
+      clip-path: polygon(0 0, 82% 0, 100% 18%, 100% 100%, 18% 100%, 0 82%);
+    }
+
+    .brand {
+      margin-top: 14px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.32em;
+      color: var(--gray-light);
+    }
+    .brand b { color: var(--red); }
+
+    .body { padding: 22px 28px 30px; }
+
+    .name {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 0.98;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+    .name span { display: block; color: var(--gray-light); }
+
+    .role {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 7px 16px 7px 12px;
+      background: var(--red);
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+    }
+
+    .divider {
+      display: flex;
+      gap: 6px;
+      margin: 26px 0 22px;
+    }
+    .divider i { height: 4px; transform: skewX(-30deg); }
+    .divider i:nth-child(1) { width: 56px; background: var(--red); }
+    .divider i:nth-child(2) { width: 36px; background: var(--gray); }
+    .divider i:nth-child(3) { flex: 1; background: #232428; }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .contact .icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      background: #1c1d21;
+      border: 1px solid #2c2d31;
+      color: var(--red);
+    }
+    .contact small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      margin-top: 26px;
+      padding: 16px 20px;
+      background: var(--whatsapp);
+      color: #062b14;
+      text-decoration: none;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .whatsapp:hover { filter: brightness(1.08); transform: translateY(-2px); }
+    .whatsapp:active { transform: translateY(0); }
+    .whatsapp:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+    .whatsapp svg { width: 26px; height: 26px; flex-shrink: 0; }
+
+    .footer {
+      height: 8px;
+      background: linear-gradient(90deg, var(--red) 0 45%, var(--gray-dark) 45% 100%);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; }
+      .whatsapp { transition: none; }
+    }
+
+    @media (max-width: 360px) {
+      .name { font-size: 32px; }
+      .header, .body { padding-left: 22px; padding-right: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="stripes" aria-hidden="true">
+      <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+    </div>
+
+    <header class="header">
+      <img class="logo" src="assets/logo-ral.jpg" alt="Logo de RAL">
+      <p class="brand"><b>R</b>AL</p>
+    </header>
+
+    <section class="body">
+      <h1 class="name">Mauricio<span>Mellado Cervantes</span></h1>
+      <p class="role">Departamento de Ventas</p>
+
+      <div class="divider" aria-hidden="true"><i></i><i></i><i></i></div>
+
+      <a class="contact" href="tel:+528448928781">
+        <span class="icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+        </span>
+        <span><small>Teléfono</small>844 892 8781</span>
+      </a>
+
+      <a class="whatsapp" href="https://wa.me/528448928781?text=Hola%20Mauricio%2C%20me%20interesa%20recibir%20informaci%C3%B3n." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-4 1 1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.6 5.7 5 2.8 1.1 3.4.9 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg>
+        Enviar WhatsApp
+      </a>
+    </section>
+
+    <div class="footer" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
